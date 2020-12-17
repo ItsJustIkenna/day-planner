@@ -1,53 +1,52 @@
 $(document).ready(function () {
   // Dom Variables
+  var main = $("#main");
+  var dateHeading = $("#currentDay");
   // JavaScript Variables
   var now = moment();
-  var dateHeading = $("#currentDay");
   dateHeading.text(now);
 
-  for (hour = 9; hour <= 17; hour++) {
-    var index = hour - 9;
-    var rowDivEl = $("<div>");
-    rowDivEl.addClass("row");
-    rowDivEl.addClass("plannerRow");
-    rowDivEl.attr("hour-index", hour);
+  timeArr = [9, 10, 11, 12, 13, 14, 15, 16, 17];
 
-    var timeColEl = $("<div>");
-    timeColEl.addClass("col-3");
+  for (hour = 0; hour < timeArr.length; hour++) {
+    var rowEl = $("<div>");
+    var btnEl = $("<button>");
+    var btnIcon = $("<i>");
+    var timeBoxSpanEl = $("<span>");
+    var textBoxEl = $("<textarea>");
+    
+    textBoxEl.addClass("col-md-10 description past");
 
-    var timeBoxSpan = $("<span>");
-    timeBoxSpan.attr("class", "timeBox");
+    rowEl.addClass("row time-block");
 
-    var displayTime = 0;
-    var ampm = "";
-    if (hour > 12) {
-      displayTime = hour - 12;
-      ampm = "pm";
-    } else {
-      displayTime = hour;
-      ampm = "am";
-    }
+    //display the time dynamically
+    var displayHour = moment().set("hour", timeArr[hour]).format("hA");
+    
+    //give time element content
+    timeBoxSpanEl.addClass("col-md-1");
+    timeBoxSpanEl.text(displayHour);
 
-    timeBoxSpan.text(displayTime + " " + ampm);
-    console.log(timeBoxSpan);
+    //give text element content
+    textBoxEl.addClass("textBox");
 
-    timeColEl.append(timeBoxSpan);
-    rowDivEl.append(timeColEl);
-    $("#main").append(rowDivEl);
+    //give button element content
+    btnEl.addClass("saveBtn col-md-1");
+    btnIcon.addClass("far fa-save");
+    btnEl.append(btnIcon);
 
-    var inputEl = $("<input>");
-    inputEl.attr("id", "input-" + index);
-    inputEl.attr("hour-index", index);
-    inputEl.attr("type", "text");
-    inputEl.attr("class", "dailyPlan");
+    //append all columns to the row
+    rowEl.append(timeBoxSpanEl, textBoxEl, btnEl);
+    
+    //append row to container
+    main.append(rowEl);
 
-    var inputColEl = $("<div>");
-    inputColEl.addClass("<col>");
-
-    inputColEl.append(inputEl);
-    rowDivEl.append(inputColEl);
+    console.log(timeBoxSpanEl[0].innerHTML);
+    console.log(textBoxEl);
+    console.log(btnEl);
   }
+
   // Function Definitions
   // Function Calls
   // Event Listeners
+  $(".saveBtn").on("click", function () {});
 });
