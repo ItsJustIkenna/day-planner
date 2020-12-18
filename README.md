@@ -4,7 +4,7 @@ This assignment generates a random password from the criteria selected from the 
 
 ## Credits
 
-Special shoutout to Jeana Rose Mathis for help with this homework. Here is the [link](https://github.com/jeanarose) to her GitHub
+Special shoutout to Jeana Rose Mathis and Spencer Vaughan for help with this homework. Here is the [link](https://github.com/jeanarose) to her GitHub and the [link](https://github.com/spencerv86) to his GitHub.
 
 ## Screenshot
 
