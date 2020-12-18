@@ -1,6 +1,6 @@
 # day-planner
 
-This assignment generates a random password from the criteria selected from the prompts. It features dynamically updating HTML and CSS powered by JavaScript code. The user is prompted to input the length of the password, if the password will include uppercase letters and lowercase letters, numeric values and special characters then the code generates a password based on those criteria and displays it on the screen.
+This assignment is a day planner to create a schedule. When I open the planner the current day is displayed at the top of the calendar. When I scroll down, I am presented with time blocks for that day. I view the time blocks for that day and each time block is color-coded to indicate whether it is in the past, present, or future. When I click into a time block, I can enter an event. I can click the save button for that time block. The text for that event is saved in local storage. When I refresh the page, the saved events persist.
 
 ## Credits
 
